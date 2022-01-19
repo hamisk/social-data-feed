@@ -3,12 +3,13 @@ const cors = require('cors')
 const app = express();
 
 const port = process.env.PORT || 8080
+const postsRoutes = require('./routes/posts')
 
-app.use(express.json());
+// app.use(express.json());
 app.use(cors());
 
+app.use('/api/posts', postsRoutes)
 
-
-app.listen(8080, function() {
-    console.log("Connected to server at port 8080")
+app.listen(port, function() {
+    console.log(`Connected to server at port ${port}`)
 })
