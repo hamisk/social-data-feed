@@ -1,0 +1,14 @@
+{
+  "name": "buzzerr-feed-api",
+  "version": "1.0.0",
+  "description": "REST API to process social data from JSON file and send to front-end feed.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harman Khera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
