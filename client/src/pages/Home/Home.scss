@@ -1,0 +1,18 @@
+.home {
+    width: 100%;
+    display: flex;
+
+    &__column-left {
+        width: 25%;
+        border-right: 1px solid grey;
+    }
+
+    &__column-mid {
+        width: 50%;
+    }
+
+    &__column-right {
+        width: 25%;
+        border-left: 1px solid grey;
+    }
+}
