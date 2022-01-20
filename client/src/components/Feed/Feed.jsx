@@ -4,7 +4,7 @@ import axios from 'axios';
 import Post from '../Post/Post';
 import './Feed.scss'
 
-const API_URL = 'http://localhost:8080'
+import { API_URL } from '../../config'
 
 function Feed() {
 
