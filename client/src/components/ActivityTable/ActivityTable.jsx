@@ -22,26 +22,16 @@ function ActivityTable() {
                     let totalLikes = userPosts.reduce((a, b) => a + (b.likes || 0), 0)
     
                     setActivitySummary(prevSummary => [...prevSummary, [user, userPostCount, totalLikes]])
-                    // console.log([user, userPostCount, totalLikes])
                 })
                 console.log(activitySummary)
                 setIsLoaded(true)
             })
-    }, [])
-
-    function updateNoOfDays(event) {
-        setNoOfDays(event.target.value)
-    }
-
+    }, [noOfDays])
 
     return (
         <div className='activity-table'>
             <div className="activity-table__range-select">
-                <p className='activity-table__text'>Show User Activity Summary for last</p>
-                <div className="activity-table__input-days">
-                    <input className='activity-table__input' type="number" value={noOfDays} onChange={updateNoOfDays}/>
-                    <p className='activity-table__text'>days</p>
-                </div>
+                <p className='activity-table__text'>User Activity Summary for last 180 days</p>
             </div>
             <div className="activity-table__table">
                 <div className="activity-table__header">

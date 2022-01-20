@@ -2,15 +2,16 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs')
 
-const postsData = JSON.parse(fs.readFileSync("./data/MOCK_DATA.json"))
-const users = [...new Set(postsData.map(post => post.name))]
-
 const convertToDate = (ddmmyyyy) => {
     //  Convert a "dd/mm/yyyy" string into a Date object
     let dateArray = ddmmyyyy.split("/");
     let dateObj = new Date(dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0]);
     return dateObj;     
 }
+
+const postsData = JSON.parse(fs.readFileSync("./data/MOCK_DATA.json"))
+postsData.sort((a, b) => convertToDate(b.date_posted) - convertToDate(a.date_posted))
+const users = [...new Set(postsData.map(post => post.name))]
 
 const postsWithinNDays = (N) => {
     // Get current date

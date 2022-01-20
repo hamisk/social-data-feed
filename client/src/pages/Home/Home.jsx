@@ -14,7 +14,7 @@ function Home() {
                 </div>
             </div>
             <div className="home__column-right">
-                <h2 className="home__heading">Activity Table</h2>
+                <h3 className="home__heading">Activity Table</h3>
                 <ActivityTable />
             </div>
         </div>

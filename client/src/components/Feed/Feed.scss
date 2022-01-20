@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 95%;
     
     &__select-wrapper {
         width: 100%;
@@ -11,6 +11,26 @@
 
     &__posts {
         display: flex;
+        flex-direction: column;
         justify-content: center;
+    }
+
+    &__load-more {
+        height: 3rem;
+        width: 12rem;
+        border-radius: 8px;
+        color: white;
+        background-color: orange;
+        border: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: all 1s;
+        cursor: pointer;
+        margin: 2rem;
+
+        &:hover {
+            background-color: orangered;
+            transition: all 1s;
+        }
     }
 }
