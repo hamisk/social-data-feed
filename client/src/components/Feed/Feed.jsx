@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import Post from '../Post/Post';
+import './Feed.scss'
 
 const API_URL = 'http://localhost:8080'
 
@@ -31,12 +32,12 @@ function Feed() {
 
     return (
         <div className="feed">
+            <h2 className="feed__heading">Post Feed</h2>
             <Select 
                 options={userList}
                 onChange={opt => {
                     setSelectedUser(opt.value)
                     getUserPosts(opt.value)}}/>
-            <p>{selectedUser}'s posts</p>
             <div className="feed__posts">
                 {userPosts ? 
                 userPosts.map(post => <Post key={post._id} userPost={post}/>)

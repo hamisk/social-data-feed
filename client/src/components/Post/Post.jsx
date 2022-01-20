@@ -1,23 +1,25 @@
 import React from 'react';
 import likeIcon from '../../assets/images/likes.svg'
-import epochToDynamic from '../../utils/utils';
 import './Post.scss'
 
 function Post({ userPost }) {
-	const date = Date.parse(userPost.date_posted)
-	console.log(date)
-	const dynamicDate = epochToDynamic(date)
+
+	const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	const dateArray = userPost.date_posted.split("/")
+	const DDMMMYYYY = `${dateArray[0]} ${months[Number(dateArray[1])-1]} ${dateArray[2]}`
 
 	return (
 		
 		<div className='post__card'>
 			<div className="post__image-name-date">
-				<img src={userPost.profile_pic} alt='profile pic' className='post__profile-image' />
-				<div className="post__name-company">
-					<p className="post__name">{userPost.name}</p>
-					<p className="post__company">{userPost.company}</p>
+				<div className="post__image-name">
+					<img src={userPost.profile_pic} alt='profile pic' className='post__profile-image' />
+					<div className="post__name-company">
+						<p className="post__name">{userPost.name}</p>
+						<p className="post__company">{userPost.company}</p>
+					</div>
 				</div>
-				<p className="post__date">{dynamicDate}</p>
+				<p className="post__date">{DDMMMYYYY}</p>
 			</div>
 			<div className="post__text-wrapper">
 				<p className="post__text">{userPost.post_content}</p>

@@ -8,13 +8,6 @@ function Home() {
     return (
         <div className='home'>
             <div className='home__column-left'>
-                <h1 className="home__column-title">Left Column Title</h1>
-                <p className="home_column-text">Left column text</p>
-            </div>
-            <div className="home__column-mid">
-                {/* <div className="home__search-bar">
-                    <SearchBar />
-                </div> */}
                 <div className="home__feed">
                     <Feed />
                 </div>
