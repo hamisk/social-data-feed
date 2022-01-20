@@ -1,0 +1,78 @@
+.activity-table {
+
+    &__range-select {
+        margin-bottom: 1rem;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__input-days {
+        display: flex;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    &__input {
+        height: 1.5rem;
+        width: 3rem;
+        text-align: right;
+        margin-right: 0.5rem;
+    }
+
+    &__table {
+        background-color: white;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid grey;
+    }
+
+    &__rows {
+        height: 10rem;
+        overflow-y: scroll;
+    }
+
+    &__header {
+        display: flex;
+        border-radius: 4px;
+        width: 100%;
+        border-bottom: 2px solid grey;
+        padding-right: 1rem;
+    }
+
+    &__sub {
+        width: 25%;
+        text-align: center;
+        margin: 0;
+        padding: 1rem 0;
+
+        &--mid {
+            @extend .activity-table__sub;
+            border-left: 2px solid grey;
+            border-right: 2px solid grey;
+        }
+    }
+
+    &__sub-user {
+        @extend .activity-table__sub;
+        width: 50%;
+    }
+
+    &__row {
+        display: flex;
+        width: 100%;
+    }
+
+    &__row-text {
+        width: 25%;
+        text-align: center;
+        margin: 0.33rem 0;
+    }
+
+    &__row-text-user {
+        width: 50%;
+        text-align: center;
+        margin: 0.33rem 0;
+    }
+}

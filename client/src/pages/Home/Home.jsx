@@ -5,6 +5,7 @@ import './Home.scss'
 
 
 function Home() {
+
     return (
         <div className='home'>
             <div className='home__column-left'>
@@ -13,8 +14,7 @@ function Home() {
                 </div>
             </div>
             <div className="home__column-right">
-                <h1 className="home__column-title">Right Column Title</h1>
-                <p className="home__column-text">Right column text</p>
+                <h2 className="home__heading">Activity Table</h2>
                 <ActivityTable />
             </div>
         </div>

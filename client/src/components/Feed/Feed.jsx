@@ -9,7 +9,6 @@ const API_URL = 'http://localhost:8080'
 function Feed() {
 
     const [userList, setUserList] = useState([]);
-    const [selectedUser, setSelectedUser] = useState([]);
     const [userPosts, setUserPosts] = useState(false);
 
 
@@ -33,11 +32,11 @@ function Feed() {
     return (
         <div className="feed">
             <h2 className="feed__heading">Post Feed</h2>
-            <Select 
-                options={userList}
-                onChange={opt => {
-                    setSelectedUser(opt.value)
-                    getUserPosts(opt.value)}}/>
+            <div className="feed__select-wrapper">
+                <Select
+                    options={userList}
+                    onChange={opt => {getUserPosts(opt.value)}}/>
+            </div>
             <div className="feed__posts">
                 {userPosts ? 
                 userPosts.map(post => <Post key={post._id} userPost={post}/>)
